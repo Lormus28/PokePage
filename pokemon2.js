@@ -1,16 +1,9 @@
-// const $darkThemeButton = document.querySelector(".darkThemeButton");
-
-function darktheme(darkThemeButton, classDarkMode){
-  console.log ("Hola");
+function darktheme(darkThemeButton, classDarkMode) {
+  console.log("Hola");
   const $selectors = document.querySelectorAll("[data-dark]"),
-  
-  $darkThemeButton = document.querySelector(".darkThemeButton");
-
-  
-
+    $darkThemeButton = document.querySelector(".darkThemeButton");
 
   const darkMode = () => {
-
     $selectors.forEach((el) => {
       el.classList.add(classDarkMode);
     });
@@ -20,7 +13,6 @@ function darktheme(darkThemeButton, classDarkMode){
   };
 
   const lightMode = () => {
-
     $selectors.forEach((el) => {
       el.classList.remove(classDarkMode);
     });
@@ -29,33 +21,23 @@ function darktheme(darkThemeButton, classDarkMode){
     localStorage.setItem("theme", "light");
   };
 
-
   document.addEventListener("click", (e) => {
-
-    if (e.target.matches (darkThemeButton)) { 
-      
-      if ($darkThemeButton.textContent === "Dark Mode"){
-      darkMode();
-    }else{
-      lightMode();
+    if (e.target.matches(darkThemeButton)) {
+      if ($darkThemeButton.textContent === "Dark Mode") {
+        darkMode();
+      } else {
+        lightMode();
+      }
     }
-  }
-});
+  });
 
+  document.addEventListener("DOMContentLoaded", (e) => {
+    if (localStorage.getItem("theme") === null)
+      localStorage.setItem("theme", "light");
 
-document.addEventListener("DOMContentLoaded", (e) => {
+    if (localStorage.getItem("theme") === "light") lightMode();
 
-  if (localStorage.getItem("theme") === null)
-
-    localStorage.setItem("theme","light");
-
-  
-  if (localStorage.getItem("theme") === "light")
-    lightMode();
-  
-
-  if (localStorage.getItem("theme") === "dark")
-    darkMode();
+    if (localStorage.getItem("theme") === "dark") darkMode();
   });
 }
 

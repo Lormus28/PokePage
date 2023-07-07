@@ -124,9 +124,27 @@
   width: 100%;
 }
 
+/*Dark Theme */
+
 .classDarkMode{
   background-color: black;
   color: var(--link-color);
+}
+
+.classDarkMode p{
+  color: var(--link-color);
+}
+
+.classDarkMode a{
+  color: var(--link-color);
+}
+
+.classDarkMode .name p{
+  color: var(--text-color);
+}
+
+.classDarkMode .powerLevel p{
+  color: var(--text-color);
 }
 
 @media screen and (min-width: 1400px) {

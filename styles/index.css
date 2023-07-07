@@ -1,4 +1,9 @@
-
+*:root{
+  --primary-color: #306BB3;
+  --link-color: #fff;
+  --text-color:#1a202c;
+  --title-color: #486284;
+}
 
 *{
   margin: 0;
@@ -51,7 +56,7 @@
 }
 
 #text2{
-  color:var(--text-color);
+  /* color:var(--text-color); */
   line-height: 2.8em;
 }
 
@@ -64,6 +69,21 @@
 .image-container img{
   width: 100%;
   align-self: center;
+}
+
+/* Dark Theme */
+
+.classDarkMode{
+  background-color: black;
+  color: var(--link-color);
+}
+
+.classDarkMode p{
+  color: var(--link-color);
+}
+
+.classDarkMode a{
+  color: var(--link-color);
 }
 
 @media (min-width: 1200px){

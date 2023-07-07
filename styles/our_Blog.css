@@ -1,3 +1,26 @@
+*:root{
+    --primary-color: #306BB3;
+    --link-color: #fff;
+    --text-color:#1a202c;
+    --title-color: #486284;
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+
+  *,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+
 .title2-container{
     display: flex;
     flex-direction: column;
@@ -6,39 +29,66 @@
 
 .title2-container h2{
     text-align: center;
-    color: #486284;
-    font-size: 50px;
+    color: var(--title-color);
+    font-size: 3rem;
     padding: 1cm;
 }
 
 .title2-container p{
     text-align: center;
     color: #1a202c;
-    width: 50%;
+    width: 1rem;
     align-self: center;
-    padding: 0.5cm;
-    font-size: 25px;
+    padding: 1rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 
 .ash2{
     width: 100%;
     display: flex;
-    justify-content: center;
+    padding-bottom: 2rem;
+    /* justify-content: center; */
 }
 
 .ash2 img{
-    width: 95%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 2rem;
 }
 
 .textContainer{
-    padding: 2rem 1rem;
-    color: #1A202C;
+    display: flex;
+    flex-direction: row;
+    padding: 4rem 1.5rem;
 }
 
 .text-main{
-    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--text-black);
+    font-weight: 100;
+    width: 60%;
+    font-size: 1rem;
+    margin-left: 1rem;
 }
+
+/* Dark Theme */
+
+.classDarkMode{
+    background-color: black;
+    color: var(--link-color);
+  }
+  
+  .classDarkMode p{
+    color: var(--link-color);
+  }
+  
+  .classDarkMode a{
+    color: var(--link-color);
+  }
 
 @media (min-width: 1200px){
     .title2-container p{
