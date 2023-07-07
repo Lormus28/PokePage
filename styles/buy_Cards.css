@@ -1,0 +1,147 @@
+*:root{
+  --primary-color: #306BB3;
+  --link-color: #fff;
+  --text-color:#1a202c;
+  --title-color: #486284;
+}
+
+.loader {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title-buy-cards{
+  color: var(--title-color);
+  font-size: 2rem;
+  padding: 1.5rem 1.5rem 3rem 1.5rem;
+  line-height: 1.5;
+}
+
+.text-buy-cards{
+  font-size: 1rem;
+  padding-top: 1rem;
+  color: var(--text-color);
+
+}
+
+.container-pokemons{
+  gap: 1.5rem;
+  justify-items: center;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.powerLevel{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1rem;
+}
+
+.pokeCard{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #dee5ed;
+  border-radius: 0.5rem;
+  margin: 2vw;
+  padding: 2vw;
+  width: 15rem;
+  height: 21rem;
+  /* width: 10rem;
+  height: 16rem; */
+}
+
+.backCard{
+  background-color: var(--link-color);
+  border-radius: 0.8rem;
+  margin: 0 auto;
+  width: 12rem;
+  height: 11rem;
+}
+
+.backCard img {
+  width: 12rem;
+  height: 11rem;
+}
+
+.name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.0rem;
+}
+
+.name p:first-letter{
+    text-transform: uppercase;
+}
+
+
+.powerLevel button {
+  width: 5rem;
+  border-radius: 0.25rem;
+  height: 2rem;
+  color: var(--link-color);
+  background-color: var(--primary-color);
+  border: none;
+}
+
+.powerLevel button:hover{
+  opacity:0.6;
+}
+
+.titleContainer{
+  font-size: 1rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.pokemonTypes{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.pokemonTypes a{
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nextPrevButton{
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  font-size: 2rem;
+}
+
+.links-prev-next{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.classDarkMode{
+  background-color: black;
+  color: var(--link-color);
+}
+
+@media screen and (min-width: 1400px) {
+
+  .container-pokemons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .loader{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
