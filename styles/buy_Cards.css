@@ -49,7 +49,7 @@
   border-radius: 0.5rem;
   margin: 2vw;
   padding: 2vw;
-  width: 15rem;
+  width: 90%;
   height: 21rem;
   /* width: 10rem;
   height: 16rem; */
@@ -59,7 +59,7 @@
   background-color: var(--link-color);
   border-radius: 0.8rem;
   margin: 0 auto;
-  width: 12rem;
+  /* width: 12rem; */
   height: 11rem;
 }
 
