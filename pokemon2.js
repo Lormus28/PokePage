@@ -1,8 +1,12 @@
-const $darkThemeButton = document.querySelector(".darkThemeButton");
+// const $darkThemeButton = document.querySelector(".darkThemeButton");
 
-function darktheme($darkThemeButton, classDarkMode){
+function darktheme(darkThemeButton, classDarkMode){
+  console.log ("Hola");
+  const $selectors = document.querySelectorAll("[data-dark]"),
   
-  const $selectors = document.querySelectorAll("[data-dark]");
+  $darkThemeButton = document.querySelector(".darkThemeButton");
+
+  
 
 
   const darkMode = () => {
@@ -13,9 +17,9 @@ function darktheme($darkThemeButton, classDarkMode){
 
     $darkThemeButton.textContent = "Light Mode";
     localStorage.setItem("theme", "dark");
-  }
+  };
 
-  const LightMode = () => {
+  const lightMode = () => {
 
     $selectors.forEach((el) => {
       el.classList.remove(classDarkMode);
@@ -23,30 +27,36 @@ function darktheme($darkThemeButton, classDarkMode){
 
     $darkThemeButton.textContent = "Dark Mode";
     localStorage.setItem("theme", "light");
-  }
-  // alert($darkThemeButton);
+  };
 
-  document.addEventListener("Click", (e) => {
 
-    if (e.target === $darkThemeButton)
-    { if ($darkThemeButton.textContent === "Dark Mode"){
+  document.addEventListener("click", (e) => {
+
+    if (e.target.matches (darkThemeButton)) { 
+      
+      if ($darkThemeButton.textContent === "Dark Mode"){
       darkMode();
     }else{
-      LightMode();
-    }}
+      lightMode();
+    }
+  }
 });
+
 
 document.addEventListener("DOMContentLoaded", (e) => {
 
-  if (localStorage.getItem("theme") === null){
+  if (localStorage.getItem("theme") === null)
 
-    localStorage.setItem("theme","light")
+    localStorage.setItem("theme","light");
 
-  }
-  if (localStorage.getItem("theme") === "light"){
-    LightMode();
-  }
+  
+  if (localStorage.getItem("theme") === "light")
+    lightMode();
+  
 
-  if (localStorage.getItem("theme") === "dark"){
+  if (localStorage.getItem("theme") === "dark")
     darkMode();
-  }})};
+  });
+}
+
+darktheme(".darkThemeButton", "classDarkMode");
