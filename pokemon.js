@@ -2,10 +2,12 @@ const $containerPokemons = document.querySelector(".container-pokemons");
 
 const $linksPrevNext = document.querySelector(".links-prev-next");
 
+let activeFilter= "all";
+
 let APIpokemon = "https://pokeapi.co/api/v2/pokemon/";
+let APITypes = "https://pokeapi.co/api/v2/type";
 
 async function pokemonData(url) {
-  let APITypes = "https://pokeapi.co/api/v2/type";
 
   if (localStorage.getItem("selectType") === null) {
     localStorage.setItem("selectType", "all");
@@ -24,8 +26,6 @@ async function pokemonData(url) {
       $template = "",
       $prevLink,
       $nextLink;
-
-    //console.log(json);
 
     let pokemonjson =
       localStorage.getItem("selectType") === "all"
@@ -94,18 +94,24 @@ async function pokemonData(url) {
 }
 
 document.addEventListener("click", (e) => {
-    if (e.target.matches(".links-prev-next a")) {
-      e.preventDefault();
-      pokemonData(e.target.getAttribute("href"));
-    }
-  });
+  if (e.target.matches(".links-prev-next a")) {
+    e.preventDefault();
+    pokemonData(e.target.getAttribute("href"));
+  }
+});
 
 document.addEventListener("DOMContentLoaded", (e) => pokemonData(APIpokemon));
 
+// function filterByType(type){
+//   localStorage.setItem('selectType', type)
+//   pokemonData(APITypes)
+// }
+
 document.addEventListener("click", (e) => {
-    if (e.target.matches(".pokemonTypes a")) {
-      localStorage.setItem("selectType", e.target.id);
-    }
-  });
+  if (e.target.matches(".pokemonTypes a")) {
+    localStorage.setItem("selectType", e.target.id);
+  }
+});
+
 
 
